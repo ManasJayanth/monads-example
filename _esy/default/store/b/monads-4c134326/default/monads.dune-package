@@ -1,0 +1,16 @@
+(lang dune 1.8)
+(name monads)
+(library
+ (name monads.library)
+ (kind normal)
+ (orig_src_dir /Users/manas/development/dev/monads/library)
+ (archives (byte library/Library.cma) (native library/Library.cmxa))
+ (plugins (byte library/Library.cma) (native library/Library.cmxs))
+ (foreign_archives (native library/Library.a))
+ (main_module_name Library)
+ (modes byte native)
+ (modules
+  (alias_module (name Library) (obj_name library) (visibility public) (impl))
+  (main_module_name Library)
+  (modules ((name Util) (obj_name library__Util) (visibility public) (impl)))
+  (wrapped true)))

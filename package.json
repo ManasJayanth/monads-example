@@ -1,0 +1,41 @@
+
+{
+  "name": "monads",
+  "version": "0.0.0",
+  "description": "My Project",
+  "esy": {
+    "build": "dune build -p #{self.name}",
+    "release": {
+      "releasedBinaries": ["MonadsApp.exe"]
+    }
+  },
+  "buildDirs": {
+    "test": {
+      "require": ["monads/library", "rely.lib"],
+      "bin": {
+        "TestMonads.exe": "TestMonads.re"
+      }
+    },
+    "library": {},
+    "executable": {
+      "require": ["monads/library"],
+      "bin": {
+        "MonadsApp.exe": "MonadsApp.re"
+      }
+    }
+  },
+  "scripts": {
+    "test": "esy b dune runtest"
+  },
+  "dependencies": {
+    "@opam/dune": "*",
+    "@esy-ocaml/reason": "*",
+    "refmterr": "*",
+    "ocaml": "~4.6.0",
+    "pesy": "*",
+    "@reason-native/rely": "*"
+  },
+  "devDependencies": {
+    "@opam/merlin": "*"
+  }
+}

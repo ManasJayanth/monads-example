@@ -1,0 +1,1 @@
+(test (name TestMonads) (libraries monads.library rely.lib)) 
